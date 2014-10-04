@@ -1,0 +1,14 @@
+Package: ase
+Type: Package
+Title: Collection of useful functions for "Applied Statistics and Econometrics"
+Version: 1.0
+Date: 2014-10-05
+Author: Giuseppe Ragusa <gragusa@luiss.it>
+Maintainer: Giuseppe Ragusa <gragusa@luiss.it>
+Description: Collection of useful functions for "Applied Statistics and
+    Econometrics"
+License: MIT
+Depends:
+    R,
+    sandwich,
+    lmtest
