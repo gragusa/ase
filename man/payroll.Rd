@@ -8,7 +8,7 @@
 data(payroll)
 }
 \description{
-A dataset contains data about payroll workers from the SWIG
+A dataset contains data about payroll workers from the SWIG (Bank of Italy).
 }
 \details{
 \itemize{
