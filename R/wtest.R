@@ -1,5 +1,5 @@
 
-##' coeftest is a function for performing Wald test of estimated coefficients.
+##' wald_test is a function for performing Wald test of estimated coefficients.
 
 ##'
 ##' 
@@ -18,7 +18,7 @@ wald_test <- function(object, testcoef = NULL, null, vcov = vcovHC, type = c("HC
   {
   
   cobj <- coef(object)
-  
+  type  <- match.arg(type)
   if(is.null(testcoef))
     testcoef <- names(cobj <- coef(object))
   
@@ -52,5 +52,18 @@ wald_test <- function(object, testcoef = NULL, null, vcov = vcovHC, type = c("HC
   invisible(out)
   
 }
+
+##' F_test is a function for performing Wald test of estimated coefficients.
+##'
+##' 
+##' @title Testing Estimated Coefficients
+##' @param object an object
+##' @param testcoef 
+##' @param null null hypothesis being tested (default 0)
+##' @param vcov the variance to be used (default heteroskedastic robust)
+##' @param type type of variance estimator
+##' @return A list with test information
+##' @author Giuseppe Ragusa
+##' @export
 
 Ftest <- wald_test
