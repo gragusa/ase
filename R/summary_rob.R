@@ -20,8 +20,13 @@ summary_rob <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
   sobj$coefficients <- b
   ind <- is.na(b)
   
-  f <- waldtest(object, vcov=vcovHC(object, type = type), test = 'Chisq')
-  sobj$fstatistic <- c(value=f$Chisq[2], numdf = abs(f$Df[2]), dendf = Inf)
+  if(nrow(b)>1) {
+    f <- waldtest(object, vcov=vcovHC(object, type = type), test = 'Chisq')
+    sobj$fstatistic <- c(value=f$Chisq[2], numdf = abs(f$Df[2]), dendf = Inf)
+  } else {
+    sobj$fstatistic <- c(value=NA, numdf = NA, dendf = Inf)
+  }
+    
   class(sobj) <- "summary_rob"
   sobj
 }
