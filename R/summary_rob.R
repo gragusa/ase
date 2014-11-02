@@ -16,6 +16,17 @@ summary_rob <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
     stop("'summary_rob' only works on object of class 'lm'")
   type <- match.arg(type)
   b <- coeftest(object, vcov = vcovHC(object, type = type))
+  
+  factor_regressors <- names(class_regressors <- attributes(object$term)$dataClasses)
+  factor_regressors <- factor_regressors[class_regressors=="factor"]
+  
+  
+  if( length(factor_regressors) > 0) {  
+    for (j in factor_regressors) {
+      rownames(b) <- gsub(j, x=rownames(b), replacement = "")    
+    }
+  }
+  
   sobj <- summary(object)
   sobj$coefficients <- b
   ind <- is.na(b)
