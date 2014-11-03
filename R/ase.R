@@ -84,3 +84,52 @@ NULL
 #' @usage data(wage2)
 #' @format A data frame with 935 rows and 17 variables
 NULL
+
+
+#' US Traffic Fatalities
+#' 
+#' US traffic fatalities panel data for the “lower 48” US states 
+#' (i.e., excluding Alaska and Hawaii), annually for 1982 through 1988.
+#' 
+#' \itemize{
+#' \item state. factor indicating state.
+#' \item year. factor indicating year.
+#' \item spirit. numeric: Spirit consumption.
+#' \item unemp. numeric: state unemployment rare.
+#' \item emppop. numeric: employment/population ratio.
+#' \item beertax. numeric: tax on case of beer.
+#' \item baptist. numeric: Percent of southern baptist.
+#' \item mormon. numeric: Percent of mormons.
+#' \item drinkage. numeric:  Minimum legal drinking age.
+#' \item dry. numeric:  Minimum legal drinking age.
+#' \item miles. numeric:  Minimum legal drinking age.
+#' \item breath. factor: preliminary breath test law?
+#' \item jail. factor: mandatory jail sentence?
+#' \item service. factor: mandatory community service?
+#' \item fatal. numeric: number of vehicle fatalities.
+#' \item nfatal. numeric: number of night-time vehicle fatalities.
+#' \item sfatal. numeric: number of single vehicle fatalities.
+#' \item fatal1517. numeric: number of vehicle fatalities, 15–17 year olds.
+#' \item nfatal1517. numeric: number of night-time vehicle fatalities, 15–17 year olds.
+#' \item fatal1820. numeric: number of vehicle fatalities, 18–20 year olds.
+#' \item nfatal1820. numeric: number of night-time vehicle fatalities, 18–20 year olds.
+#' \item fatal2124. numeric: number of vehicle fatalities, 21–24 year olds.
+#' \item nfatal2124. numeric: number of night-time vehicle fatalities, 21–24 year olds.
+#' \item afatal. numeric: number of alcohol-involved vehicle fatalities.
+#' \item pop. numeric: population.
+#' \item pop1517. numeric: population, 15–17 year olds.
+#' \item pop1820. numeric: population, 18–20 year olds.
+#' \item pop2124. numeric: population, 21–24 year olds.
+#' \item milestot. numeric: total vehicle miles (millions).
+#' \item unempus. numeric: US unemployment rate.
+#' \item emppopus. numeric: US employment/population ratio.
+#' \item gsp. numeric: GSP rate of change.
+#' }
+#' 
+#' @docType data
+#' @keywords datasets
+#' @name fatalities
+#' @usage data(fatalities)
+#' @format A data frame with 336 rows and 34 variables
+NULL
+
