@@ -11,4 +11,5 @@ License: MIT
 Depends:
     R,
     sandwich,
-    lmtest
+    lmtest,
+    car
