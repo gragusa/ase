@@ -51,6 +51,9 @@ function (x, digits = max(3L, getOption("digits") - 3L), symbolic.cor = x$symbol
                 digits = digits))
         cat("\n")
     }
+    if(!is.null(x$factor_omitted)) {
+      cat('---\nFactors not reported:', paste(x$factor_omitted, sep = ","), "\n")
+    }
     correl <- x$correlation
     if (!is.null(correl)) {
         p <- NCOL(correl)

@@ -24,10 +24,11 @@ summary_rob <- function(obj, ...) {
 #' @export
 summary_rob.lm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC", 
                                                        "HC0", "HC2", "HC3",
-                                                       "HC4", "HC4m", "HC5")) {  
+                                                       "HC4", "HC4m", "HC5"), 
+                           omit_factor = NULL) {  
   type <- match.arg(type)
   b <- coeftest(object, vcov = vcovHC(object, type = type), df = Inf)
-  
+  ncoef <- nrow(b)
   factor_regressors <- names(class_regressors <- attributes(object$term)$dataClasses)
   factor_regressors <- factor_regressors[class_regressors=="factor"]
   
@@ -39,16 +40,34 @@ summary_rob.lm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
   }
   
   sobj <- summary(object)
+  
+  if(!is.null(omit_factor)) {
+    factor_omitted <- names(object$xlevel)
+    if(!is.logical(omit_factor)) {
+      factor_omitted <- na.omit(factor_omitted[match(factor_omitted, omit_factor)])
+    }
+    excl <- NULL
+    for(j in 1:length(factor_omitted)) {
+      excl <- c(excl, object$xlevel[[j]])
+    }
+    idx <- which(!is.na(match(rownames(b), excl)))
+    b <- b[-idx,,drop=FALSE]
+    sobj$factor_omitted <- factor_omitted
+  }
+  
+  
   sobj$coefficients <- b
   ind <- is.na(b)
   
-  if(nrow(b)>1) {
+  
+  
+  if(ncoef>1) {
     f <- waldtest(object, vcov=vcovHC(object, type = type), test = 'Chisq')
     sobj$fstatistic <- c(value=f$Chisq[2], numdf = abs(f$Df[2]), dendf = Inf)
   } else {
     sobj$fstatistic <- c(value=NA, numdf = NA, dendf = Inf)
   }
-    
+  
   class(sobj) <- "summary_rob"
   sobj
 }
