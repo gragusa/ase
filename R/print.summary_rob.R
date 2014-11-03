@@ -71,3 +71,70 @@ function (x, digits = max(3L, getOption("digits") - 3L), symbolic.cor = x$symbol
     cat("\n")
     invisible(x)
 }
+
+
+##' @method print summary_rob_plm
+##' @export print.summary_rob_plm
+
+print.summary_rob_plm <- function (x, digits = max(3, getOption("digits") - 2), width = getOption("width"), 
+          subset = NULL, ...) 
+{
+  formula <- formula(x)
+  has.instruments <- (length(formula)[2] == 2)
+  effect <- plm:::describe(x, "effect")
+  model <- plm:::describe(x, "model")
+  cat(paste(plm:::effect.plm.list[effect], " ", sep = ""))
+  cat(paste(plm:::model.plm.list[model], " Model", sep = ""))
+  if (model == "random") {
+    ercomp <- describe(x, "random.method")
+    cat(paste(" \n   (", random.method.list[ercomp], "'s transformation)\n", 
+              sep = ""))
+  }
+  else {
+    cat("\n")
+  }
+  if (has.instruments) {
+    ivar <- describe(x, "inst.method")
+    cat(paste("Instrumental variable estimation\n   (", inst.method.list[ivar], 
+              "'s transformation)\n", sep = ""))
+  }
+  cat("\nCall:\n")
+  print(x$call)
+  cat("\n")
+  pdim <- plm:::pdim.panelmodel(x)
+  print(pdim)
+  if (model == "random") {
+    cat("\nEffects:\n")
+    print(x$ercomp)
+  }
+#   cat("\nResiduals :\n")
+#   save.digits <- unlist(options(digits = digits))
+#   on.exit(options(digits = save.digits))
+#   print(sumres(x))
+  cat("\nCoefficients :\n")
+  if (is.null(subset)) 
+    printCoefmat(coef(x), digits = digits)
+  else printCoefmat(coef(x)[subset, , drop = FALSE], digits = digits)
+  cat("\n")
+#   cat(paste("Total Sum of Squares:    ", signif(tss(x), digits), 
+#             "\n", sep = ""))
+#   cat(paste("Residual Sum of Squares: ", signif(deviance(x), 
+#                                                 digits), "\n", sep = ""))
+#   cat(paste("R-Squared      : ", signif(x$r.squared[1], digits), 
+#             "\n"))
+  cat("Adj. R-Squared : ", signif(x$r.squared[2], digits), 
+      "\n")
+  fstat <- x$fstatistic
+  if (names(fstat$statistic) == "F") {
+    cat(paste("F-statistic: ", signif(fstat$statistic), " on ", 
+              fstat$parameter["df1"], " and ", fstat$parameter["df2"], 
+              " DF, p-value: ", format.pval(fstat$p.value, digits = digits), 
+              "\n", sep = ""))
+  }
+  else {
+    cat(paste("Chisq: ", signif(fstat$statistic), " on ", 
+              fstat$parameter, " DF, p-value: ", format.pval(fstat$p.value, 
+                                                             digits = digits), "\n", sep = ""))
+  }
+  invisible(x)
+}

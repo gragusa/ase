@@ -67,3 +67,4 @@ wald_test <- function(object, testcoef = NULL, null, vcov = vcovHC, type = c("HC
 ##' @export
 
 Ftest <- wald_test
+
