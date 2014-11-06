@@ -4,24 +4,24 @@
 ##' 
 ##' @title Object Summaries
 ##' @param object an object for which a summary is desired.
-##' @param alpha significance level for the Wald test 
-##' @param type the type of heteroskedastic robust variance estimator
-##' @return It depends
+##' @param alpha significance level for the Wald test.
+##' @param type the type of heteroskedastic robust variance estimator.
+##' @param omit_factor whether to omit factor in output.
+##' @param cluster for the plm method cluster standard at the individual level.
+##' @return A summary_rob object.
 ##' @author Giuseppe Ragusa
 ##' @export
 ##' 
 ##' 
 
-summary_rob <- function(obj, ...) {
+summary_rob <- function(object, ...) {
   UseMethod("summary_rob")
 }
 
-#' @return \code{NULL}
-#'
+
 #' @rdname summary_rob
 #' @method summary_rob lm
-#' @S3method summary_rob lm
-#' @export
+#' @export summary_rob.lm
 summary_rob.lm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC", 
                                                        "HC0", "HC2", "HC3",
                                                        "HC4", "HC4m", "HC5"), 
@@ -72,12 +72,11 @@ summary_rob.lm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
   sobj
 }
 
-#' @return \code{NULL}
 #'
 #' @rdname summary_rob
 #' @method summary_rob glm
-#' @S3method summary_rob glm
-#' @export
+#' @export summary_rob.glm
+
 summary_rob.glm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC", 
                                                           "HC0", "HC2", "HC3",
                                                           "HC4", "HC4m", "HC5")) {  
@@ -109,14 +108,13 @@ summary_rob.glm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
   sobj
 }
 
-#' @return \code{NULL}
-#'
+
 #' @rdname summary_rob
 #' @method summary_rob plm
-#' @S3method summary_rob plm
-#' @export
+#' @export summary_rob.plm
 
-summary_rob.plm <- function(obj, alpha = 0.05, cluster = FALSE, type = c("HC1", "const", "HC", 
+
+summary_rob.plm <- function(object, alpha = 0.05, cluster = FALSE, type = c("HC1", "const", "HC", 
                                                                         "HC0", "HC2", "HC3",
                                                                         "HC4", "HC4m", "HC5")) {
   type <- match.arg(type)

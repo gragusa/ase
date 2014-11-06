@@ -17,26 +17,6 @@
 #' @format A data frame with 5700 rows and 5 variables
 NULL
 
-#' Do education and IQ have an interactive effect in the log(wage) equation?
-#' 
-#' A dataset contains data about payroll workers 
-#' 
-#' \itemize{
-#'   \item wage. numeric: wages for payroll workers
-#'   \item educ. numeric: years of education
-#'   \item KWW. factor: education levels. 
-#'   \item IQ. factor: gender 
-#'   \item age. numeric: age of respondent 
-#'   \item hours. numeric: hours worked
-#'   \item exper. numeric: experience
-#' }
-#' 
-#' @docType data
-#' @keywords datasets
-#' @name wage2
-#' @usage data(wage2)
-#' @format A data frame with 935 rows and 17 variables
-NULL
 #' Data on test score and attendance.
 #' 
 #' These data were collected by Professors Ronald Fisher and Carl Liedholm

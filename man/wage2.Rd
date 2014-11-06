@@ -6,25 +6,11 @@
 \format{A data frame with 935 rows and 17 variables}
 \usage{
 data(wage2)
-
-data(wage2)
 }
 \description{
 A dataset contains data about payroll workers
-
-A dataset contains data about payroll workers
 }
 \details{
-\itemize{
-  \item wage. numeric: wages for payroll workers
-  \item educ. numeric: years of education
-  \item KWW. factor: education levels.
-  \item IQ. factor: gender
-  \item age. numeric: age of respondent
-  \item hours. numeric: hours worked
-  \item exper. numeric: experience
-}
-
 \itemize{
   \item wage. numeric: wages for payroll workers
   \item educ. numeric: years of education

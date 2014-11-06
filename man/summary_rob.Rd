@@ -6,36 +6,36 @@
 \alias{summary_rob.plm}
 \title{Object Summaries}
 \usage{
-summary_rob(obj, ...)
+summary_rob(object, ...)
 
 \method{summary_rob}{lm}(object, alpha = 0.05, type = c("HC1", "const",
-  "HC", "HC0", "HC2", "HC3", "HC4", "HC4m", "HC5"))
+  "HC", "HC0", "HC2", "HC3", "HC4", "HC4m", "HC5"), omit_factor = NULL)
 
 \method{summary_rob}{glm}(object, alpha = 0.05, type = c("HC1", "const",
   "HC", "HC0", "HC2", "HC3", "HC4", "HC4m", "HC5"))
 
-\method{summary_rob}{plm}(obj, alpha = 0.05, cluster = FALSE,
+\method{summary_rob}{plm}(object, alpha = 0.05, cluster = FALSE,
   type = c("HC1", "const", "HC", "HC0", "HC2", "HC3", "HC4", "HC4m", "HC5"))
 }
 \arguments{
 \item{object}{an object for which a summary is desired.}
 
-\item{alpha}{significance level for the Wald test}
+\item{alpha}{significance level for the Wald test.}
 
-\item{type}{the type of heteroskedastic robust variance estimator}
+\item{type}{the type of heteroskedastic robust variance estimator.}
+
+\item{omit_factor}{whether to omit factor in output.}
+
+\item{cluster}{for the plm method cluster standard at the individual level.}
 }
 \value{
-It depends
-
-\code{NULL}
-
-\code{NULL}
-
-\code{NULL}
+A summary_rob object.
 }
 \description{
 \code{summary_rob} produces result summaries of the results of various model
 fitting functions using as default heteroskedastic robust standard errors.
+
+
 }
 \author{
 Giuseppe Ragusa
