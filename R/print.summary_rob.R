@@ -36,6 +36,7 @@ function (x, digits = max(3L, getOption("digits") - 3L), symbolic.cor = x$symbol
             na.print = "NA", ...)
         cat("---\nHeteroskadasticity robust standard errors used\n")
     }
+    if(!is.null(x$sigma))
     cat("\nResidual standard error:", format(signif(x$sigma, 
         digits)), "on", rdf, "degrees of freedom")
     cat("\n")
