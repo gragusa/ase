@@ -72,6 +72,42 @@ summary_rob.lm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC",
   sobj
 }
 
+#' @return \code{NULL}
+#'
+#' @rdname summary_rob
+#' @method summary_rob glm
+#' @S3method summary_rob glm
+#' @export
+summary_rob.glm <- function(object, alpha = 0.05, type = c("HC1", "const", "HC", 
+                                                          "HC0", "HC2", "HC3",
+                                                          "HC4", "HC4m", "HC5")) {  
+  type <- match.arg(type)
+  b <- coeftest(object, vcov = vcovHC(object, type = type), df = Inf)
+  
+  factor_regressors <- names(class_regressors <- attributes(object$term)$dataClasses)
+  factor_regressors <- factor_regressors[class_regressors=="factor"]
+  
+  
+  if( length(factor_regressors) > 0) {  
+    for (j in factor_regressors) {
+      rownames(b) <- gsub(j, x=rownames(b), replacement = "")    
+    }
+  }
+  
+  sobj <- summary(object)
+  sobj$coefficients <- b
+  ind <- is.na(b)
+  
+  if(nrow(b)>1) {
+    f <- waldtest(object, vcov=vcovHC(object, type = type), test = 'Chisq')
+    sobj$fstatistic <- c(value=f$Chisq[2], numdf = abs(f$Df[2]), dendf = Inf)
+  } else {
+    sobj$fstatistic <- c(value=NA, numdf = NA, dendf = Inf)
+  }
+  
+  class(sobj) <- "summary_rob"
+  sobj
+}
 
 #' @return \code{NULL}
 #'
