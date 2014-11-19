@@ -2,6 +2,8 @@
 
 S3method(print,ivreg)
 export(Ftest)
+export(J_test)
+export(J_test.ivreg)
 export(confint_rob)
 export(ivreg)
 export(print.summary_rob)

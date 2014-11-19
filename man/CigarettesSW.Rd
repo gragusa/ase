@@ -49,7 +49,7 @@ c1995 <- subset(CigarettesSW, year == "1995")
 
 ## Equations 12.9--12.11
 fm_s1 <- lm(log(rprice) ~ tdiff, data = c1995)
-coeftest(fm_s1, vcov = hc1)
+summary_rob(fm_s1)
 fm_s2 <- lm(log(packs) ~ fitted(fm_s1), data = c1995)
 fm_ivreg <- ivreg(log(packs) ~ log(rprice), ~ tdiff, data = c1995)
 summary_rob(fm_ivreg)

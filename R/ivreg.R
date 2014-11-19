@@ -221,3 +221,31 @@ summary_rob.ivreg <- function(object, digits = 4, ...) {
   cat(paste("\nResidual standard error:", round(object$s, digits),
             "on", df, "degrees of freedom\n\n"))
 }
+
+##' @export 
+J_test <- function(obj, ...)
+  UseMethod("J_test")
+
+##' @method J_test ivreg
+##' @export J_test.ivreg
+J_test.ivreg <- function(obj, ...) {
+  g <- obj$instruments*obj$residuals
+  m <- ncol(g)
+  k <- length(coef(obj))
+  if(m<=k)
+    error("Exactly identified problem")
+  J <- colSums(g)%*%solve(crossprod(g))%*%colSums(g)
+  
+  pvalue <- pchisq(J, m-k, lower.tail = FALSE)
+  
+  out <- structure(data.frame(
+    q = m-k, 
+    J = J, 
+    pvalue = pvalue))
+  
+  cat('\nJ-test test of overidentifying restrictions \n\n')
+  print(format(out), row.names=FALSE)
+  cat("\n")
+  invisible(out)
+  
+}
