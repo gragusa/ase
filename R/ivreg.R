@@ -25,9 +25,7 @@ tsls2 <- function (y, X, Z, names=NULL, weights,
   result$p <- p
   b <- as.vector(b)
   names(b) <- names
-  result$coefficients <- b
-  rownames(V) <- colnames(V) <- names
-  result$vcov<- V
+  result$coefficients <- b  
   result$residuals <- as.vector(residuals)
   result$response <- y
   result$model.matrix <- X 
@@ -180,7 +178,7 @@ ivreg <- function (formula, instruments, data, subset, weights,
   result
 }
 
-##' @S3method print ivreg
+##' @export 
 print.ivreg <- function(x, ...) {
   cat("\nModel Formula: ")
   print(x$formula)
@@ -207,8 +205,8 @@ summary_rob.ivreg <- function(object, digits = 4, ...) {
 #   cat("\nResiduals:\n")
 #   print(summary(residuals(object)))
   cat("\n")
-  df <- object$n - object$p
-  std.errors <- sqrt(diag(object$vcov))
+  df <- object$df.residual
+  std.errors <- sqrt(diag(vcovHC(object, type = "HC1")))
   b <- object$coefficients
   t <- b/std.errors
   p <- 2*(1 - pt(abs(t), df))
