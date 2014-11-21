@@ -12,14 +12,18 @@ tsls2 <- function (y, X, Z, names=NULL, weights,
       stop("'weights' not of right length")
     rep.weights <- TRUE
   }
+  
   w <- weights/sum(weights)*n
   D <- diag(w)
   invZtZ <- solve(crossprod(D%*%Z,Z))
   XtZ <- crossprod(D%*%X, Z)
   V <- solve(XtZ %*% invZtZ %*% t(XtZ))
+  
   A <- V %*% XtZ %*% invZtZ
   b <- A %*% crossprod(D%*%Z, y)
   residuals <- (y - X %*% b)  
+  meat <- crossprod(Z*c(residuals))
+  V <- A%*%meat%*%t(A)
   result<-list()
   result$n <- n
   result$p <- p
@@ -30,6 +34,7 @@ tsls2 <- function (y, X, Z, names=NULL, weights,
   result$response <- y
   result$model.matrix <- X 
   result$instruments <- Z
+  result$vcov <- V
   result$cluster <- cluster
   result$s2 <- sum(residuals^2)/(n-p)
   if(rep.weights)
@@ -174,9 +179,10 @@ ivreg <- function (formula, instruments, data, subset, weights,
     result$na.action <- na.act
   if(!is.null(result$cluster))
     attr(result$vcov,'cluster')$name <- as.character(match.call()['cluster'])
-  class(result) <- c(class(result), 'ivreg', 'grpack')
+  class(result) <- c('ivreg', 'grpack')
   result
 }
+
 
 ##' @export 
 print.ivreg <- function(x, ...) {
@@ -205,8 +211,8 @@ summary_rob.ivreg <- function(object, digits = 4, ...) {
 #   cat("\nResiduals:\n")
 #   print(summary(residuals(object)))
   cat("\n")
-  df <- object$df.residual
-  std.errors <- sqrt(diag(vcovHC(object, type = "HC1")))
+  df <- object$n-object$p
+  std.errors <- sqrt(diag(object$vcov))
   b <- object$coefficients
   t <- b/std.errors
   p <- 2*(1 - pt(abs(t), df))
