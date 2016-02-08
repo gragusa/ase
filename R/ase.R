@@ -112,4 +112,125 @@ NULL
 #' @usage data(fatalities)
 #' @format A data frame with 336 rows and 34 variables
 NULL
+#' 
+#' 
+#' A dataset contains data about payroll workers 
+#' 
+#' \itemize{
+#'   \item wage. numeric: wages for payroll workers
+#'   \item educ. numeric: years of education
+#'   \item KWW. factor: education levels. 
+#'   \item IQ. factor: gender 
+#'   \item age. numeric: age of respondent 
+#'   \item hours. numeric: hours worked
+#'   \item exper. numeric: experience
+#' }
+#' 
+#' @docType data
+#' @keywords datasets
+#' @name wage2
+#' @usage data(wage2)
+#' @format A data frame with 935 rows and 17 variables
+NULL
 
+#'
+#' A dataset containing a random sample of CEO's compensation information.
+#' 
+#'\itemize{
+#'\item    salary. numeric:     1990 salary, thousands $
+#'\item  pcsalary. numeric:       \% change salary, 89-90
+#'\item     sales. numeric:  1990 firm sales, millions $
+#'\item       roe. numeric:  return on equity, 88-90 avg
+#'\item     pcroe. numeric:          \% change roe, 88-90
+#'\item       ros. numeric: return on firm\'s stock, 88-90
+#'\item     indus. numeric:        =1 if industrial firm
+#'\item   finance. numeric:         =1 if financial firm
+#'\item  consprod. numeric:  =1 if consumer product firm
+#'\item   utility. numeric:  =1 if transport. or utilties
+#'}
+#' @docType data
+#' @keywords datasets
+#' @name ceo
+#' @usage data(ceo)
+#' @format A data frame with 208 rows and 10 variables
+NULL
+#'
+#' A dataset containing a random sample of CEO's compensation information.
+#' Source: May 6, 1991 Issue of Businessweek
+#' 
+#'\itemize{
+#'  
+#'\item    salary. numeric: 1990 compensation, $1000s
+#'\item       age. numeric: age of CEO in years
+#'\item   college. numeric: =1 if attended college
+#'\item      grad. numeric: =1 if attended graduate school
+#'\item    comten. numeric: years with company
+#'\item    ceoten. numeric: years as ceo with company
+#'\item     sales. numeric: 1990 firm sales, millions
+#'\item  profits.  numeric: 1990 profits, millions
+#'\item    mktval. numeric: market value, end 1990, mills.
+#'}
+#' @docType data
+#' @keywords datasets
+#' @name ceo2
+#' @usage data(ceo2)
+#' @format A data frame with 177 rows and 9 variables
+NULL
+#'
+#' A dataset containing a random sample of CEO's compensation information.
+#' Source: May 6, 1991 Issue of Businessweek
+#' 
+#'\itemize{
+#'\item    salary. numeric: 1990 salary, thousands $
+#'\item  pcsalary. numeric: \% change salary, 89-90
+#'\item     sales. numeric: 1990 firm sales, millions $
+#'\item       roe. numeric: return on equity, 88-90 avg
+#'\item     pcroe. numeric: \% change roe, 88-90
+#'\item       ros. numeric: return on firm\'s stock, 88-90
+#'\item     indus. numeric: =1 if industrial firm
+#'\item   finance. numeric: =1 if financial firm
+#'\item  consprod. numeric: =1 if consumer product firm
+#'\item   utility. numeric: =1 if transport. or utilties
+#'}
+#' @docType data
+#' @keywords datasets
+#' @name ceo
+#' @usage data(ceo)
+#' @format A data frame with 208 rows and 10 variables
+NULL
+#'
+#' A panel of 90 observations from 1981 to 1987 about crime and punishment in
+#' Noth Caroline.
+#'
+#'\itemize{
+#' \item county county identifier
+#'\item year year from 1981 to 1987
+#'\item crmrte. crimes committed per person
+#'\item prbarr. 'probability' of arrest
+#'\item prbconv. 'probability' of conviction
+#'\item prbpris. 'probability' of prison sentenc
+#'\item avgsen. average sentence, days
+#'\item polpc. police per capita
+#'\item density. people per square mile
+#'\item taxpc. tax revenue per capita
+#'\item region. one of 'other', 'west' or 'central'
+#'\item smsa. 'yes' or 'no' if in SMSA
+#'\item pctmin. percentage minority in 1980
+#'\item wcon. weekly wage in construction
+#'\item wtuc. weekly wage in trns, util, commun
+#'\item wtrd. weekly wage in whole sales and retail trade
+#'\item wfir. weekly wage in finance, insurance and real estate
+#'\item wser. weekly wage in service industry
+#'\item wmfg. weekly wage in manufacturing
+#'\item wfed. weekly wage of federal emplyees
+#'\item wsta. weekly wage of state employees
+#'\item wloc. weekly wage of local governments employee
+#'\item mix. offence mix: face-to-face/other
+#'\item pctymle. percentage of young males
+#'}
+#'
+#' @docType data
+#' @keywords datasets
+#' @name crimenc
+#' @usage data(crimenc)
+#' @format A data frame with 630 rows and 25 variables 
