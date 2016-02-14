@@ -13,3 +13,4 @@ Depends:
     sandwich,
     lmtest,
     car
+RoxygenNote: 5.0.1

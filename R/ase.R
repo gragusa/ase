@@ -234,3 +234,26 @@ NULL
 #' @name crimenc
 #' @usage data(crimenc)
 #' @format A data frame with 630 rows and 25 variables 
+NULL
+#' Cigarette Consumption Panel Data
+
+#' Panel data on cigarette consumption for the 48 continental US States from
+#' 1985-1995.
+#' 
+#' \itemize{
+#' \item    state Factor indicating state.
+#' \item    year Factor indicating year.
+#' \item    cpi Consumer price index.
+#' \item    population State population.
+#' \item    packs Number of packs per capita.
+#' \item    income State personal income (total, nominal).
+#' \item    tax Average state, federal and average local excise taxes for fiscal year.
+#' \item  price Average price during fiscal year, including sales tax.
+#' \item    taxs Average excise taxes for fiscal year, including sales tax.
+#'}
+#' @docType data
+#' @keywords datasets
+#' @name Cigarettes
+#' @usage data("Cigarettes")
+#' @format A data frame containing 48 observations on 7 variables for 2 periods.
+
