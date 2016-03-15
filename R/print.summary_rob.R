@@ -44,7 +44,7 @@ function (x, digits = max(3L, getOption("digits") - 3L), symbolic.cor = x$symbol
         cat("  (", mess, ")\n", sep = "")
     if (!is.null(x$fstatistic)) {
         cat("Multiple R-squared: ", formatC(x$r.squared, digits = digits))
-        cat(",\tAdjusted R-squared: ", formatC(x$adj.r.squared, 
+        cat(", Adjusted R-squared: ", formatC(x$adj.r.squared, 
             digits = digits), "\nF-statistic:", formatC(x$fstatistic[1L], 
             digits = digits), "on", x$fstatistic[2L], "and", 
             x$fstatistic[3L], "DF,  p-value:", format.pval(pf(x$fstatistic[1L], 
