@@ -3,14 +3,15 @@
 \docType{data}
 \name{ceo}
 \alias{ceo}
-\title{A dataset containing a random sample of CEO's compensation information.}
+\title{CEO Compensation}
 \format{A data frame with 208 rows and 10 variables}
 \usage{
 data(ceo)
-
-data(ceo)
 }
 \description{
+A dataset containing a random sample of CEO's compensation information.
+}
+\details{
 \itemize{
 \item    salary. numeric:     1990 salary, thousands $
 \item  pcsalary. numeric:       \% change salary, 89-90
@@ -22,19 +23,6 @@ data(ceo)
 \item   finance. numeric:         =1 if financial firm
 \item  consprod. numeric:  =1 if consumer product firm
 \item   utility. numeric:  =1 if transport. or utilties
-}
-
-\itemize{
-\item    salary. numeric: 1990 salary, thousands $
-\item  pcsalary. numeric: \% change salary, 89-90
-\item     sales. numeric: 1990 firm sales, millions $
-\item       roe. numeric: return on equity, 88-90 avg
-\item     pcroe. numeric: \% change roe, 88-90
-\item       ros. numeric: return on firm\'s stock, 88-90
-\item     indus. numeric: =1 if industrial firm
-\item   finance. numeric: =1 if financial firm
-\item  consprod. numeric: =1 if consumer product firm
-\item   utility. numeric: =1 if transport. or utilties
 }
 }
 \keyword{datasets}

@@ -5,7 +5,7 @@
 \alias{summary_rob.glm}
 \alias{summary_rob.lm}
 \alias{summary_rob.plm}
-\title{Object Summaries}
+\title{Summarize regression objects}
 \usage{
 summary_rob(object, ...)
 
@@ -27,10 +27,10 @@ summary_rob(object, ...)
 
 \item{omit_factor}{whether to omit factor in output.}
 
-\item{cluster}{for the plm method cluster standard at the individual level.}
+\item{cluster}{for the plm method cluster standard errors at the individual level.}
 }
 \value{
-A summary_rob object.
+A \code{summary_rob} object.
 }
 \description{
 \code{summary_rob} produces result summaries of the results of various model

@@ -3,13 +3,16 @@
 \docType{data}
 \name{ceo2}
 \alias{ceo2}
-\title{A dataset containing a random sample of CEO's compensation information.
-Source: May 6, 1991 Issue of Businessweek}
+\title{CEO Compensation}
 \format{A data frame with 177 rows and 9 variables}
 \usage{
 data(ceo2)
 }
 \description{
+A dataset containing a random sample of CEO's compensation information.
+Source: May 6, 1991 Issue of Businessweek
+}
+\details{
 \itemize{
  
 \item    salary. numeric: 1990 compensation, $1000s

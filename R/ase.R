@@ -65,7 +65,6 @@ NULL
 #' @format A data frame with 935 rows and 17 variables
 NULL
 
-
 #' US Traffic Fatalities
 #' 
 #' US traffic fatalities panel data for the “lower 48” US states 
@@ -112,7 +111,7 @@ NULL
 #' @usage data(fatalities)
 #' @format A data frame with 336 rows and 34 variables
 NULL
-#' 
+#' Payroll data
 #' 
 #' A dataset contains data about payroll workers 
 #' 
@@ -133,7 +132,8 @@ NULL
 #' @format A data frame with 935 rows and 17 variables
 NULL
 
-#'
+#' CEO Compensation
+#' 
 #' A dataset containing a random sample of CEO's compensation information.
 #' 
 #'\itemize{
@@ -154,7 +154,9 @@ NULL
 #' @usage data(ceo)
 #' @format A data frame with 208 rows and 10 variables
 NULL
-#'
+
+#'CEO Compensation
+#' 
 #' A dataset containing a random sample of CEO's compensation information.
 #' Source: May 6, 1991 Issue of Businessweek
 #' 
@@ -176,29 +178,9 @@ NULL
 #' @usage data(ceo2)
 #' @format A data frame with 177 rows and 9 variables
 NULL
-#'
-#' A dataset containing a random sample of CEO's compensation information.
-#' Source: May 6, 1991 Issue of Businessweek
+
+#' Crime and punishment in North Carolina
 #' 
-#'\itemize{
-#'\item    salary. numeric: 1990 salary, thousands $
-#'\item  pcsalary. numeric: \% change salary, 89-90
-#'\item     sales. numeric: 1990 firm sales, millions $
-#'\item       roe. numeric: return on equity, 88-90 avg
-#'\item     pcroe. numeric: \% change roe, 88-90
-#'\item       ros. numeric: return on firm\'s stock, 88-90
-#'\item     indus. numeric: =1 if industrial firm
-#'\item   finance. numeric: =1 if financial firm
-#'\item  consprod. numeric: =1 if consumer product firm
-#'\item   utility. numeric: =1 if transport. or utilties
-#'}
-#' @docType data
-#' @keywords datasets
-#' @name ceo
-#' @usage data(ceo)
-#' @format A data frame with 208 rows and 10 variables
-NULL
-#'
 #' A panel of 90 observations from 1981 to 1987 about crime and punishment in
 #' Noth Caroline.
 #'
@@ -235,8 +217,9 @@ NULL
 #' @usage data(crimenc)
 #' @format A data frame with 630 rows and 25 variables 
 NULL
-#' Cigarette Consumption Panel Data
 
+#' Cigarette Consumption Panel Data
+#' 
 #' Panel data on cigarette consumption for the 48 continental US States from
 #' 1985-1995.
 #' 
@@ -256,4 +239,44 @@ NULL
 #' @name Cigarettes
 #' @usage data("Cigarettes")
 #' @format A data frame containing 48 observations on 7 variables for 2 periods.
+NULL
 
+#' County crime data
+#' 
+#' Panel data on county level crime data.
+#' 
+#' \itemize{
+#' \item     county               county identifier
+#' \item     year                        81 to 87
+#' \item     crmrte     crimes committed per person
+#' \item     prbarr         'probability' of arrest
+#' \item     prbconv     'probability' of conviction
+#' \item     prbpris 'probability' of prison sentenc
+#' \item     avgsen             avg. sentence, days
+#' \item     polpc               police per capita
+#' \item     density             people per sq. mile
+#' \item     taxpc          tax revenue per capita
+#' \item      west           =1 if in western N.C.
+#' \item   central           =1 if in central N.C.
+#' \item     urban                   =1 if in SMSA
+#' \item  pctmin80            perc. minority, 1980
+#' \item      wcon       weekly wage, construction
+#' \item      wtuc    wkly wge, trns, util, commun
+#' \item      wtrd wkly wge, whlesle, retail trade
+#' \item      wfir    wkly wge, fin, ins, real est
+#' \item      wser      wkly wge, service industry
+#' \item      wmfg         wkly wge, manufacturing
+#' \item      wfed         wkly wge, fed employees
+#' \item      wsta       wkly wge, state employees
+#' \item      wloc        wkly wge, local gov emps
+#' \item      mix offense mix: face-to-face/other
+#' \item      pctymle              percent young male
+#'}
+#' @docType data
+#' @keywords datasets
+#' @name countycrime
+#' @usage data("countycrime")
+#' @format A data frame containing 630 observation on 26 variables.
+#' @source From C. Cornwell and W. Trumball (1994), “Estimating the
+#' Economic Model of Crime with Panel Data,” Review of Economics and Statistics 76, 360-366.
+NULL

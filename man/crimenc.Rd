@@ -3,13 +3,16 @@
 \docType{data}
 \name{crimenc}
 \alias{crimenc}
-\title{A panel of 90 observations from 1981 to 1987 about crime and punishment in
-Noth Caroline.}
+\title{Crime and punishment in North Carolina}
 \format{A data frame with 630 rows and 25 variables}
 \usage{
 data(crimenc)
 }
 \description{
+A panel of 90 observations from 1981 to 1987 about crime and punishment in
+Noth Caroline.
+}
+\details{
 \itemize{
 \item county county identifier
 \item year year from 1981 to 1987
