@@ -122,8 +122,8 @@ summary_rob.plm <- function(object, alpha = 0.05, cluster = FALSE, type = c("HC1
   else
     obj <- plm:::summary.plm(object, .vcov = plm:::vcovHC.plm(obj, method = "white1", type=type))
   
-  class(obj) <- "summary_rob_plm"
-  return(obj)
+  class(object) <- "summary_rob_plm"
+  return(object)
 }
           
 
