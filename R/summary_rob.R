@@ -118,9 +118,9 @@ summary_rob.plm <- function(object, alpha = 0.05, cluster = FALSE, type = c("HC1
                                                                         "HC4", "HC4m", "HC5")) {
   type <- match.arg(type)
   if(cluster)
-    obj <- plm:::summary.plm(object, .vcov = plm:::vcovHC.plm(obj, type=type, cluster = "group"))
+    obj <- plm:::summary.plm(object, .vcov = plm:::vcovHC.plm(object, type=type, cluster = "group"))
   else
-    obj <- plm:::summary.plm(object, .vcov = plm:::vcovHC.plm(obj, method = "white1", type=type))
+    obj <- plm:::summary.plm(object, .vcov = plm:::vcovHC.plm(object, method = "white1", type=type))
   
   class(object) <- "summary_rob_plm"
   return(object)
