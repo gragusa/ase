@@ -13,6 +13,9 @@ data(wage2)
 \description{
 A dataset contains data about payroll workers
 
+A dataset contains data about payroll workers
+}
+\details{
 \itemize{
   \item wage. numeric: wages for payroll workers
   \item educ. numeric: years of education
@@ -22,8 +25,7 @@ A dataset contains data about payroll workers
   \item hours. numeric: hours worked
   \item exper. numeric: experience
 }
-}
-\details{
+
 \itemize{
   \item wage. numeric: wages for payroll workers
   \item educ. numeric: years of education
