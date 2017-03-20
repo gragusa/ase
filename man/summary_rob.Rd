@@ -2,8 +2,8 @@
 % Please edit documentation in R/summary_rob.R
 \name{summary_rob}
 \alias{summary_rob}
-\alias{summary_rob.glm}
 \alias{summary_rob.lm}
+\alias{summary_rob.glm}
 \alias{summary_rob.plm}
 \title{Summarize regression objects}
 \usage{
@@ -39,4 +39,3 @@ fitting functions using as default heteroskedastic robust standard errors.
 \author{
 Giuseppe Ragusa
 }
-

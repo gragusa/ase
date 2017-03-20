@@ -21,4 +21,3 @@ A dataset contains data about payroll workers from the SWIG (Bank of Italy).
 }
 }
 \keyword{datasets}
-

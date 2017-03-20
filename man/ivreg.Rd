@@ -50,4 +50,3 @@ Estimate IV models
 \details{
 Details
 }
-

@@ -35,4 +35,3 @@ the fitted models, but does not assume conditional homoskedasticity.
 \author{
 Giuseppe Ragusa
 }
-

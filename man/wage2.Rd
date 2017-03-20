@@ -3,6 +3,7 @@
 \docType{data}
 \name{wage2}
 \alias{wage2}
+\alias{wage2}
 \title{Do education and IQ have an interactive effect in the log(wage) equation?}
 \format{A data frame with 935 rows and 17 variables}
 \usage{
@@ -37,4 +38,3 @@ A dataset contains data about payroll workers
 }
 }
 \keyword{datasets}
-

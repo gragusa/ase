@@ -27,4 +27,3 @@ Source: May 6, 1991 Issue of Businessweek
 }
 }
 \keyword{datasets}
-

@@ -49,4 +49,3 @@ US traffic fatalities panel data for the “lower 48” US states
 }
 }
 \keyword{datasets}
-

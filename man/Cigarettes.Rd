@@ -26,4 +26,3 @@ Panel data on cigarette consumption for the 48 continental US States from
 }
 }
 \keyword{datasets}
-

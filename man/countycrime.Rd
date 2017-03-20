@@ -45,4 +45,3 @@ Panel data on county level crime data.
 }
 }
 \keyword{datasets}
-

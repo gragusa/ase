@@ -26,4 +26,3 @@ A dataset containing a random sample of CEO's compensation information.
 }
 }
 \keyword{datasets}
-

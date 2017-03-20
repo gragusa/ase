@@ -38,19 +38,26 @@ wald_test <- function(object, testcoef = NULL, null, vcov = vcovHC, type = c("HC
   
   pvalue <- pchisq(Ft, q, lower.tail = FALSE)
   
-  out <- structure(data.frame(
+  out <- list()
+  out$test <- data.frame(
           q = q, 
           W = Ft, 
-          pvalue = pvalue))
-  
+          pvalue = pvalue)
+  out$testcoef = testcoef
+  out$null = null
+  class(out) <- c("wald_test")
+  out
+}
+
+##' @export
+print.wald_test <- function(x, digits = getOption("digits")) {
   cat('Wald test\n\n')
   cat("Null hypothesis:\n")
-  cat(paste(testcoef, null, sep=" = "), sep='\n')
+  cat(paste(x$testcoef, x$null, sep=" = "), sep='\n')
   cat('\n')
   
-  print(format(out), row.names=FALSE)
-  invisible(out)
-  
+  print.data.frame(x$test, row.names=FALSE, digits = digits)
+  invisible(x)
 }
 
 ##' F_test is a function for performing Wald test of estimated coefficients.

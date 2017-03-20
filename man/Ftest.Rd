@@ -27,4 +27,3 @@ F_test is a function for performing Wald test of estimated coefficients.
 \author{
 Giuseppe Ragusa
 }
-
